@@ -27,8 +27,20 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
-
-        return redirect()->intended(route('dashboard', absolute: false));
+        // if(auth()->user()->roles->pluck('name')[0]){}
+        $role = auth()->user()->roles->pluck('name')[0];
+            switch ($role) {
+                case "member":
+                    return redirect()->intended('member/dashboard')->with('success','Berhasil login!');
+                case "kasir":
+                    return redirect()->intended('kasir/dashboard')->with('success','Berhasil login!');
+                case "admin":
+                    return redirect()->intended('admin/dashboard')->with('success','Berhasil login!');
+                case "pimpinan":
+                    return redirect()->intended('pimpinan/dashboard')->with('success','Berhasil login!');
+                    default:
+                redirect()->back()->withErrors("Ada yang salah");
+            }
     }
 
     /**
