@@ -34,21 +34,33 @@
                             @csrf
 						<div class="form-group mb-3">
 							<label class="floating-label" for="name">Name</label>
-							<input type="text" class="form-control" id="name" placeholder="">
+							<input type="text" name="name" value="{{ old('name') }}" class="form-control" id="name" placeholder="">
+                            @error('name')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
 						</div>
 						<div class="form-group mb-3">
-							<label class="floating-label" for="Email">Email address</label>
-							<input type="text" class="form-control" id="Email" placeholder="">
+							<label class="floating-label" for="email">Email address</label>
+							<input type="email" name="email" value="{{ old('email') }}" class="form-control" id="email" placeholder="">
+                            @error('email')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
 						</div>
 						<div class="form-group mb-4">
-							<label class="floating-label" for="Password">Password</label>
-							<input type="password" class="form-control" id="Password" placeholder="">
+							<label class="floating-label" for="password">Password</label>
+							<input type="password" name="password" class="form-control" id="Password" placeholder="">
+                            @error('password')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
 						</div>
-						<div class="custom-control custom-checkbox  text-left mb-4 mt-2">
-							<input type="checkbox" class="custom-control-input" id="customCheck1">
-							<label class="custom-control-label" for="customCheck1">Send me the <a href="#!"> Newsletter</a> weekly.</label>
-						</div>
-						<button class="btn btn-primary btn-block mb-4">Sign up</button>
+                        <div class="form-group mb-4">
+                            <label class="floating-label" for="password_confirmation">Confirm Password</label>
+                            <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" placeholder="">
+                            @error('password_confirmation')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+						<button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
                         </form>
 						<p class="mb-2">Already have an account? <a href="auth-signin.html" class="f-w-400">Signin</a></p>
 					</div>
