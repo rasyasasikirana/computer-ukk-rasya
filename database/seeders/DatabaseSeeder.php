@@ -22,7 +22,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RoleSeeder::class,
             KasirSeeder::class,
-            AdminSeeder::class
+            AdminSeeder::class,
+            PimpinanSeeder::class
         ]);
     }
 }
