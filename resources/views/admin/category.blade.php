@@ -24,15 +24,9 @@
                         <h5>Category</h5>
                         <div class="card-header-right">
                             <div class="btn-group card-option">
-                                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="feather icon-more-horizontal"></i>
-                                </button>
-                                <ul class="list-unstyled card-option dropdown-menu dropdown-menu-right">
-                                    <li class="dropdown-item full-card"><a href="#!"><span><i class="feather icon-maximize"></i> maximize</span><span style="display:none"><i class="feather icon-minimize"></i> Restore</span></a></li>
-                                    <li class="dropdown-item minimize-card"><a href="#!"><span><i class="feather icon-minus"></i> collapse</span><span style="display:none"><i class="feather icon-plus"></i> expand</span></a></li>
-                                    <li class="dropdown-item reload-card"><a href="#!"><i class="feather icon-refresh-cw"></i> reload</a></li>
-                                    <li class="dropdown-item close-card"><a href="#!"><i class="feather icon-trash"></i> remove</a></li>
-                                </ul>
+                                <a href="{{ route('categories.create') }}" style="background-color: #007bff; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
+                                    Tambah Kategori
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -47,62 +41,29 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    @forelse ($categories as $category)
+                                        <tr>
                                         <td>
-                                            <h6>John Deo</h6>
+                                            <h6>{{ $loop->iteration }}</h6>
                                         </td>
-                                        <td>Able Pro</td>
+                                        <td>{{ $category->name }}</td>
                                         <td class="d-flex justify-content-end">
-                                            <button onclick="editData(this)" style="background-color: #007bff; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
+                                            <div>
+                                            <a href="{{ route('categories.edit',['category'=>$category->id]) }}" style="background-color: #007bff; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
                                                 Edit
-                                            </button>
-                                            <button onclick="deleteData(this)" style="background-color: #dc3545; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
-                                                Hapus
-                                            </button>
+                                            </a>
+                                            </div>
+                                            <form class="mt-n1" action="{{ route('categories.destroy', ['category' => $category->id]) }}" method="POST" style="margin-top: 10px;">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" style="background-color: #dc3545; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Hapus</button>
+                                            </form>
                                         </td>                                        
                                     </tr>
-                                    <tr>
-                                        <td>
-                                            <h6>John Deo</h6>
-                                        </td>
-                                        <td>Able Pro</td>
-                                        <td class="d-flex justify-content-end">
-                                            <button onclick="editData(this)" style="background-color: #007bff; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
-                                                Edit
-                                            </button>
-                                            <button onclick="deleteData(this)" style="background-color: #dc3545; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
-                                                Hapus
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h6>John Deo</h6>
-                                        </td>
-                                        <td>Able Pro</td>
-                                        <td class="d-flex justify-content-end">
-                                            <button onclick="editData(this)" style="background-color: #007bff; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
-                                                Edit
-                                            </button>
-                                            <button onclick="deleteData(this)" style="background-color: #dc3545; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
-                                                Hapus
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h6>John Deo</h6>
-                                        </td>
-                                        <td>Able Pro</td>
-                                        <td class="d-flex justify-content-end">
-                                            <button onclick="editData(this)" style="background-color: #007bff; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
-                                                Edit
-                                            </button>
-                                            <button onclick="deleteData(this)" style="background-color: #dc3545; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
-                                                Hapus
-                                            </button>
-                                        </td>
-                                    </tr>
+                                    @empty
+                                        
+                                    @endforelse
+                                    
                                 </tbody>
                             </table>
                         </div>
