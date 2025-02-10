@@ -3,7 +3,7 @@
 
 <head>
 
-	<title>Ablepro v8.0 bootstrap admin template by Phoenixcoded</title>
+	<title>Toko Komputer Rasya</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -29,7 +29,7 @@
 				<div class="col-md-12">
 					<div class="card-body">
 						<img src="{{ asset('assets/images/logo-dark.png') }}" alt="" class="img-fluid mb-4">
-						<h4 class="mb-3 f-w-400">Sign up</h4>
+						<h4 class="mb-3 f-w-400">Registrasi</h4>
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
 						<div class="form-group mb-3">
@@ -40,9 +40,23 @@
                             @enderror
 						</div>
 						<div class="form-group mb-3">
-							<label class="floating-label" for="email">Email address</label>
+							<label class="floating-label" for="alamat">Alamat</label>
+							<input type="text" name="alamat" value="{{ old('alamat') }}" class="form-control" id="alamat" placeholder="">
+                            @error('alamat')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+						</div>
+						<div class="form-group mb-3">
+							<label class="floating-label" for="email">Email</label>
 							<input type="email" name="email" value="{{ old('email') }}" class="form-control" id="email" placeholder="">
                             @error('email')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+						</div>
+						<div class="form-group mb-3">
+							<label class="floating-label" for="no_telp">Nomor Telepon</label>
+							<input type="text" name="no_telp" value="{{ old('no_telp') }}" class="form-control" id="no_telp" placeholder="">
+                            @error('no_telp')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
 						</div>
@@ -60,9 +74,9 @@
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
-						<button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
+						<button type="submit" class="btn btn-primary btn-block mb-4">Registrasi</button>
                         </form>
-						<p class="mb-2">Already have an account? <a href="auth-signin.html" class="f-w-400">Signin</a></p>
+						<p class="mb-2">Sudah mempunyai akun? <a href="auth-signin.html" class="f-w-400">Login</a></p>
 					</div>
 				</div>
 			</div>

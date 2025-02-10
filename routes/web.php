@@ -7,9 +7,13 @@ Route::get('/', function () {
     return view('layouts.login');
   });
 
-  Route::get('/member/dashboard', function () {
-    return view('member.index');
-  });
+Route::get('/member/dashboard', function () {
+  return view('member.index');
+});
+
+Route::get('/category', function () {
+  return view('admin.category');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

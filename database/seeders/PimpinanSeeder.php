@@ -13,7 +13,7 @@ class PimpinanSeeder extends Seeder
      */
     public function run(): void
     {
-        $user=User::create(['name'=>'pimpinan','email'=>'pimpinan@gmail.com', 'email_verified_at'=> now (), 'password'=>'password']);
+        $user=User::create(['name'=>'pimpinan', 'alamat'=>'Indonesia', 'email'=>'pimpinan@gmail.com', 'email_verified_at'=> now (), 'no_telp'=>'01144', 'password'=>'password']);
         $user->assignRole('pimpinan');
     }
 }

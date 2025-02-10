@@ -7,43 +7,6 @@
 	</div>
 	<!-- [ Pre-loader ] End -->
 	<!-- [ navigation menu ] start -->
-	<nav class="pcoded-navbar @@menuclass @@if(layouts=='horizontal'){theme-horizontal}">
-		<div class="navbar-wrapper @@if(sublayouts=='v2'){container} @@if(layouts=='horizontal' && rtltheme== 'true'){container}">
-			<div class="navbar-content @@if(layouts=='vertical'){scroll-div} @@if(layouts=='horizontal'){sidenav-horizontal}" @@if(layouts=='horizontal' ){id="layout-sidenav" }>
-				@@if(layouts!='horizontal'){
-				<div class="">
-					<div class="main-menu-header">
-						<img class="img-radius" src="public/assets/images/user/avatar-2.jpg" alt="User-Profile-Image">
-						<div class="user-details">
-							<div id="more-details">UX Designer <i class="fa fa-caret-down"></i></div>
-						</div>
-					</div>
-					<div class="collapse" id="nav-user-link">
-						<ul class="list-unstyled">
-							<li class="list-group-item"><a href="user-profile.html"><i class="feather icon-user m-r-5"></i>View Profile</a></li>
-							<li class="list-group-item"><a href="#!"><i class="feather icon-settings m-r-5"></i>Settings</a></li>
-							<li class="list-group-item"><a href="auth-normal-sign-in.html"><i class="feather icon-log-out m-r-5"></i>Logout</a></li>
-						</ul>
-					</div>
-				</div>
-				}
-				<ul class="nav pcoded-inner-navbar @@if(layouts=='horizontal'){sidenav-inner}">
-					@@include('./menu-list.html')
-				</ul>
-				@@if(layouts!='horizontal'){
-				<div class="card text-center">
-					<div class="card-block">
-						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-						<i class="feather icon-sunset f-40"></i>
-						<h6 class="mt-3">Download Pro</h6>
-						<p>Getting more features with pro version</p>
-						<a href="https://1.envato.market/qG0m5" target="_blank" class="btn btn-primary btn-sm text-white m-0">Upgrade Now</a>
-					</div>
-				</div>
-				}
-			</div>
-		</div>
-	</nav>
 	<!-- [ navigation menu ] end -->
 	<!-- [ Header ] start -->
 	<header class="navbar pcoded-header navbar-expand-lg navbar-light @@headerclass">
@@ -53,8 +16,8 @@
 					<a class="mobile-menu" id="mobile-collapse" href="#!"><span></span></a>
 					<a href="#!" class="b-brand">
 						<!-- ========   change your logo hear   ============ -->
-						<img src="public/assets/images/logo.png" alt="" class="logo">
-						<img src="public/assets/images/logo-icon.png" alt="" class="logo-thumb">
+						<img src="{{ asset('public/assets/images/logo.png') }}" alt="" class="logo">
+						<img src="{{ asset('public/assets/images/logo-icon.png') }}" alt="" class="logo-thumb">
 					</a>
 					<a href="#!" class="mob-toggler">
 						<i class="feather icon-more-vertical"></i>
@@ -102,7 +65,7 @@
 										</li>
 										<li class="notification">
 											<div class="media">
-												<img class="img-radius" src="public/assets/images/user/avatar-2.jpg" alt="Generic placeholder image">
+												<img class="img-radius" src="{{ asset('public/assets/images/user/avatar-2.jpg') }}" alt="Generic placeholder image">
 												<div class="media-body">
 													<p><strong>Joseph William</strong><span class="n-time text-muted"><i class="icon feather icon-clock m-r-10"></i>10 min</span></p>
 													<p>Prchace New Theme and make payment</p>
@@ -111,7 +74,7 @@
 										</li>
 										<li class="notification">
 											<div class="media">
-												<img class="img-radius" src="public/assets/images/user/avatar-1.jpg" alt="Generic placeholder image">
+												<img class="img-radius" src="{{ asset('public/assets/images/user/avatar-1.jpg') }}" alt="Generic placeholder image">
 												<div class="media-body">
 													<p><strong>Sara Soudein</strong><span class="n-time text-muted"><i class="icon feather icon-clock m-r-10"></i>12 min</span></p>
 													<p>currently login</p>
@@ -120,7 +83,7 @@
 										</li>
 										<li class="notification">
 											<div class="media">
-												<img class="img-radius" src="public/assets/images/user/avatar-2.jpg" alt="Generic placeholder image">
+												<img class="img-radius" src="{{ asset('public/assets/images/user/avatar-2.jpg') }}" alt="Generic placeholder image">
 												<div class="media-body">
 													<p><strong>Joseph William</strong><span class="n-time text-muted"><i class="icon feather icon-clock m-r-10"></i>30 min</span></p>
 													<p>Prchace New Theme and make payment</p>
@@ -141,7 +104,7 @@
 								</a>
 								<div class="dropdown-menu dropdown-menu-right profile-notification">
 									<div class="pro-head">
-										<img src="public/assets/images/user/avatar-1.jpg" class="img-radius" alt="User-Profile-Image">
+										<img src="{{ asset('public/assets/images/user/avatar-1.jpg') }}" class="img-radius" alt="User-Profile-Image">
 										<span>John Doe</span>
 										<a href="auth-signin.html" class="dud-logout" title="Logout">
 											<i class="feather icon-log-out"></i>

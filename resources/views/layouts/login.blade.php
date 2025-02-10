@@ -16,11 +16,11 @@
 				<div class="col-md-12">
 					<div class="card-body">
 						<img src="assets/images/logo-dark.png" alt="" class="img-fluid mb-4">
-						<h4 class="mb-3 f-w-400">Signin</h4>
+						<h4 class="mb-3 f-w-400">Login</h4>
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
 						<div class="form-group mb-3">
-							<label class="floating-label" for="Email">Email address</label>
+							<label class="floating-label" for="Email">Email</label>
 							<input type="email" name="email" value="{{old('email')}}" class="form-control" id="Email" placeholder="">
                             @error('email')
                                 <span class="text-danger">{{ $message }}</span>
@@ -35,11 +35,11 @@
 						</div>
 						<div class="custom-control custom-checkbox text-left mb-4 mt-2">
 							<input type="checkbox" class="custom-control-input" id="customCheck1">
-							<label class="custom-control-label" for="customCheck1">Save credentials.</label>
+							<label class="custom-control-label" for="customCheck1">Ingat saya</label>
 						</div>
-						<button type="submit" class="btn btn-block btn-primary mb-4">Signin</button>
+						<button type="submit" class="btn btn-block btn-primary mb-4">Login</button>
                         </form>
-						<p class="mb-0 text-muted">Don’t have an account? <a href="{{ route('register') }}" class="f-w-400">Signup</a></p>
+						<p class="mb-0 text-muted">Tidak mempunyai akun? <a href="{{ route('register') }}" class="f-w-400">Registrasi</a></p>
 					</div>
 				</div>
 			</div>

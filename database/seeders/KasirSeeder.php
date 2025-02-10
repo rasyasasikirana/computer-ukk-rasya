@@ -13,7 +13,7 @@ class KasirSeeder extends Seeder
      */
     public function run(): void
     {
-        $user=User::create(['name'=>'kasir','email'=>'kasir@gmail.com', 'email_verified_at'=> now (), 'password'=>'password']);
+        $user=User::create(['name'=>'kasir', 'alamat'=>'Indonesia', 'email'=>'kasir@gmail.com', 'email_verified_at'=> now (), 'no_telp'=>'01133', 'password'=>'password']);
         $user->assignRole('kasir');
     }
 }
