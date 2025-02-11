@@ -45,37 +45,6 @@
                                     <p>New ticket Added</p>
                                 </div>
                             </div>
-                        </li>
-                        <li class="n-title">
-                            <p class="m-b-0">EARLIER</p>
-                        </li>
-                        <li class="notification">
-                            <div class="media">
-                                <img class="img-radius" src="assets/images/user/avatar-2.jpg" alt="Generic placeholder image">
-                                <div class="media-body">
-                                    <p><strong>Joseph William</strong><span class="n-time text-muted"><i class="icon feather icon-clock m-r-10"></i>10 min</span></p>
-                                    <p>Prchace New Theme and make payment</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="notification">
-                            <div class="media">
-                                <img class="img-radius" src="assets/images/user/avatar-1.jpg" alt="Generic placeholder image">
-                                <div class="media-body">
-                                    <p><strong>Sara Soudein</strong><span class="n-time text-muted"><i class="icon feather icon-clock m-r-10"></i>12 min</span></p>
-                                    <p>currently login</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="notification">
-                            <div class="media">
-                                <img class="img-radius" src="assets/images/user/avatar-2.jpg" alt="Generic placeholder image">
-                                <div class="media-body">
-                                    <p><strong>Joseph William</strong><span class="n-time text-muted"><i class="icon feather icon-clock m-r-10"></i>30 min</span></p>
-                                    <p>Prchace New Theme and make payment</p>
-                                </div>
-                            </div>
-                        </li>
                     </ul>
                     <div class="noti-footer">
                         <a href="#!">show all</a>
@@ -92,14 +61,20 @@
                     <div class="pro-head">
                         <img src="assets/images/user/avatar-1.jpg" class="img-radius" alt="User-Profile-Image">
                         <span>John Doe</span>
-                        <a href="auth-signin.html" class="dud-logout" title="Logout">
+                        {{-- <a href="{{ asset('layouts.login') }}" class="dud-logout" >
+                            
+                        </a> --}}
+                        <form id="logout-form" method="POST" action="{{ route('logout') }}" style="display: none;">
+                            @csrf
+                        </form>
+                        
+                        <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" 
+                           class="dud-logout" title="Logout">
                             <i class="feather icon-log-out"></i>
                         </a>
                     </div>
                     <ul class="pro-body">
                         <li><a href="user-profile.html" class="dropdown-item"><i class="feather icon-user"></i> Profile</a></li>
-                        <li><a href="email_inbox.html" class="dropdown-item"><i class="feather icon-mail"></i> My Messages</a></li>
-                        <li><a href="auth-signin.html" class="dropdown-item"><i class="feather icon-lock"></i> Lock Screen</a></li>
                     </ul>
                 </div>
             </div>

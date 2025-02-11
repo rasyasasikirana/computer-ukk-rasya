@@ -14,6 +14,10 @@ Route::get('/member/dashboard', function () {
   return view('member.index');
 });
 
+Route::get('/category', function () {
+  return view('admin.category');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

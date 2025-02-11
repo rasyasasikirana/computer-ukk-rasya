@@ -76,7 +76,7 @@
                         </div>
 						<button type="submit" class="btn btn-primary btn-block mb-4">Registrasi</button>
                         </form>
-						<p class="mb-2">Sudah mempunyai akun? <a href="auth-signin.html" class="f-w-400">Login</a></p>
+						<p class="mb-2">Sudah mempunyai akun? <a href="{{ route('login') }}" class="f-w-400">Login</a></p>
 					</div>
 				</div>
 			</div>
