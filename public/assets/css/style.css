@@ -2843,27 +2843,27 @@ fieldset:disabled a.btn {
 
 .btn-primary {
     color: #fff;
-    background-color: #4680ff;
-    border-color: #4680ff;
+    background-color: #FF2171;
+    border-color: #FF2171;
 }
 
 .btn-primary:hover {
     color: #fff;
-    background-color: #2066ff;
-    border-color: #135dff;
+    background-color: #ff5090;
+    border-color: #ff5090;
 }
 
 .btn-primary:focus, .btn-primary.focus {
     color: #fff;
-    background-color: #2066ff;
-    border-color: #135dff;
+    background-color: #FF2171;
+    border-color: #FF2171;
     box-shadow: 0 0 0 0rem rgba(98, 147, 255, 0.5);
 }
 
 .btn-primary.disabled, .btn-primary:disabled {
     color: #fff;
-    background-color: #4680ff;
-    border-color: #4680ff;
+    background-color: #ff5090;
+    border-color: #ff5090;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
@@ -18067,7 +18067,7 @@ body {
     font-size: 14px;
     color: #373a3c;
     font-weight: 400;
-    background: #4680ff;
+    background: #FBA1B7;
     position: relative;
 }
 
@@ -24003,7 +24003,7 @@ div.dtk-focus-alt table.dataTable tbody th.focus {
     overflow: hidden;
     min-width: 100%;
     min-height: 100vh;
-    background: #4680ff;
+    background: #FBA1B7;
 }
 
 @media (min-width: 1200px) {
