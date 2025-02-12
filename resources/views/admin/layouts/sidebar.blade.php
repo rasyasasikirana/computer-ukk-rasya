@@ -32,7 +32,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link ">
+                    <a href="{{ route('product.index') }}" class="nav-link ">
                         <span class="pcoded-micon"><i class="feather icon-home"></i></span>
                         <span class="pcoded-mtext">Produk</span>
                     </a>
