@@ -85,28 +85,35 @@ class ProductController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, Product $product)
-    {
-        $request->validate([
-            'nama_barang' => 'required|string|max:255',
-            'detail_barang' => 'required',
-            'category_id' => 'required',
-            'harga' => 'required|integer',
-            'foto' => 'image|mimes:jpeg,png,jpg|max:2048',
-            'stok' => 'required|integer',
-        ]);
+        {
+            // Validasi
+            $request->validate([
+                'nama_barang' => 'required',
+                'detail_barang' => 'required',
+                'category_id' => 'required',
+                'harga' => 'required|integer',
+                'stok' => 'required|integer',
+                'foto' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            ]);
 
-        $data = $request->all();
+            // Update data
+            $product->nama_barang = $request->nama_barang;
+            $product->detail_barang = $request->detail_barang;
+            $product->category_id = $request->category_id;
+            $product->harga = $request->harga;
+            $product->stok = $request->stok;
 
-        if ($request->hasFile('foto')) {
-            $file = $request->file('foto');
-            $filename = time() . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path('uploads'), $filename);
-            $data['foto'] = $filename;
-        }
+            // Handle Foto
+            if ($request->hasFile('foto')) {
+                $fotoPath = $request->file('foto')->store('uploads', 'public');
+                $product->foto = 'storage/' . $fotoPath;
+            }
 
-        $product->update($data);
-        return to_route('product.index')->with('success', 'Barang berhasil diperbarui.');
-    }
+            $product->save();
+
+            // dd($product); // Cek apakah kode sampai sini
+            return redirect()->route('product.index')->with('success', 'Produk berhasil diperbarui');
+}
 
     /**
      * Remove the specified resource from storage.

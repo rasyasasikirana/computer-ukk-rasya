@@ -20,7 +20,7 @@
                         <h5>Category</h5>
                         <div class="card-header-right">
                             <div class="btn-group card-option">
-                                <a href="{{ route('categories.create') }}" style="background-color: #007bff; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
+                                <a href="{{ route('categories.create') }}" style="background-color: #FF2171; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
                                     Tambah
                                 </a>
                             </div>
@@ -52,7 +52,7 @@
                                             <form class="mt-n1" action="{{ route('categories.destroy', ['category' => $category->id]) }}" method="POST" style="margin-top: 10px;">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" style="background-color: #dc3545; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Hapus</button>
+                                                <button type="submit" style="background-color: #fb0000; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Hapus</button>
                                             </form>
                                         </td>                                        
                                     </tr>

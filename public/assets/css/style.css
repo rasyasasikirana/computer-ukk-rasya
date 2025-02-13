@@ -22073,7 +22073,7 @@ pre[class*=language-]:before {
 }
 
 .pcoded-navbar.menu-light .pcoded-inner-navbar > li.active > a, .pcoded-navbar.menu-light .pcoded-inner-navbar > li.pcoded-trigger > a {
-    background: #4680ff;
+    background: #FF2171;
     color: #fff;
 }
 
@@ -22240,7 +22240,7 @@ pre[class*=language-]:before {
 
 .pcoded-header.header-blue .dropdown .profile-notification .pro-head {
     color: #fff;
-    background: #4680ff;
+    background: #FF2171;
 }
 
 .pcoded-header.header-blue .dropdown .profile-notification .pro-head .dud-logout {

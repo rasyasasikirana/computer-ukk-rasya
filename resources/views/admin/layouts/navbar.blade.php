@@ -39,7 +39,7 @@
                         </li>
                         <li class="notification">
                             <div class="media">
-                                <img class="img-radius" src="assets/images/user/avatar-1.jpg" alt="Generic placeholder image">
+                                <img class="img-radius" src="assets/images/user/avatar-2.jpg" alt="Generic placeholder image">
                                 <div class="media-body">
                                     <p><strong>John Doe</strong><span class="n-time text-muted"><i class="icon feather icon-clock m-r-10"></i>5 min</span></p>
                                     <p>New ticket Added</p>
@@ -59,7 +59,7 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right profile-notification">
                     <div class="pro-head">
-                        <img src="assets/images/user/avatar-1.jpg" class="img-radius" alt="User-Profile-Image">
+                        <img src="assets/images/user/avatar-2.jpg" class="img-radius" alt="User-Profile-Image">
                         <span>John Doe</span>
                         {{-- <a href="{{ asset('layouts.login') }}" class="dud-logout" >
                             

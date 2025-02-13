@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\MemberController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -8,17 +9,24 @@ use Illuminate\Support\Facades\Route;
 Route::resource('categories', CategoryController::class);
 Route::resource('product', ProductController::class);
 
+// Route::get('/member', function () {
+//   return view('member.index');
+// });
+Route::get('member', [MemberController::class, 'index'])->name('member.index');
+
 Route::get('/', function () {
     return view('layouts.login');
   });
 
-Route::get('/member/dashboard', function () {
-  return view('member.index');
-});
+// Route::get('/member/dashboard', function () {
+//   return view('member.index');
+// });
 
 // Route::get('/produk', function () {
 //   return view('admin.produk');
 // })->name('produk.admin');
+
+
 
 Route::get('/category', function () {
   return view('admin.category');

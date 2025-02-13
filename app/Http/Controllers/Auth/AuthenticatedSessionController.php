@@ -31,7 +31,7 @@ class AuthenticatedSessionController extends Controller
         $role = auth()->user()->roles->pluck('name')[0];
             switch ($role) {
                 case "member":
-                    return redirect()->intended('member/dashboard')->with('success','Berhasil login!');
+                    return redirect()->intended('member')->with('success','Berhasil login!');
                 case "kasir":
                     return redirect()->intended('kasir/dashboard')->with('success','Berhasil login!');
                 case "admin":

@@ -15,12 +15,12 @@
     <!-- [ Main Content ] start -->
     <div class="card">
         <div class="card-body">
-            <form action="{{ route('product.update', ['product' => $product->id]) }}" method="POST">
+            <form action="{{ route('product.update', ['product' => $product->id]) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="form-group">
                     <label for="name">Nama Barang</label>
-                    <input value="{{ $product->nama_barang }}" type="text" class="form-control" id="name" name="name"
+                    <input value="{{ $product->nama_barang }}" type="text" class="form-control" id="name" name="nama_barang"
                         required>
                 </div>
                 <div class="form-group">

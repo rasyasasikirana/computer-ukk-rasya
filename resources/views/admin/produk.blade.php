@@ -21,7 +21,7 @@
                     <div class="card-header-right">
                         <div class="btn-group card-option">
                             <a href="{{ route('product.create') }}"
-                                style="background-color: #007bff; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
+                                style="background-color: #FF2171; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
                                 Tambah
                             </a>
                         </div>
@@ -74,7 +74,7 @@
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit"
-                                                    style="background-color: #dc3545; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Hapus</button>
+                                                    style="background-color: #fb0000; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Hapus</button>
                                             </form>
                                         </td>
                                     </tr>
