@@ -14,65 +14,36 @@
     <!-- [ breadcrumb ] end -->
     <!-- [ Main Content ] start -->
     <div class="row">
-        <div class="col-xl-12 col-md-12">
-            <div class="card table-card">
-                <div class="card-body p-0">
-                    <div class="table-responsive">
-                        <table class="table table-hover mb-0">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Nama Barang</th>
-                                    <th>Detail Barang</th>
-                                    <th>Kategori</th>
-                                    <th>Harga</th>
-                                    <th>Foto</th>
-                                    <th>Stok</th>
-                                    <th class="text-right">Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @forelse ($products as $product)
-                                    <tr>
-                                        <td>
-                                            <h6>{{ $loop->iteration }}</h6>
-                                        </td>
-                                        <td>{{ $product->nama_barang }}</td>
-                                        <td>{{ $product->detail_barang }}</td>
-                                        <td>{{ $product->category->name }}</td>
-                                        <td>{{ $product->harga }}</td>
-                                        <td>
-                                            @empty($product->foto)
-                                            <img src="{{ asset('image/nophoto.jpg') }}" alt="project-image" class="rounded"
-                                                style="width: 100%; max-width: 100px; height: auto;">
-                                        @else
-                                            <img src="{{ asset($product->foto) }}" alt="project-image" class="rounded"
-                                                style="width: 100%; max-width: 100px; height: auto;">
-                                        @endempty
-                                        </td>
-                                        <td>{{ $product->stok }}</td>
-                                        <td class="d-flex justify-content-end">
-                                            <div class="pr-2">
-                                                <a href="{{ route('product.edit',['product'=>$product->id]) }}" style="background-color: #007bff; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
-                                                    Edit
-                                                </a>
-                                            </div>
-                                            <form class="mt-n1"
-                                                action="{{ route('product.destroy', ['product' => $product->id]) }}"
-                                                method="POST" style="margin-top: 10px;">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit"
-                                                    style="background-color: #fb0000; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Hapus</button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                @empty
-
-                                @endforelse
-
-                            </tbody>
-                        </table>
+        <div class="col-xl-12">
+            <div class="card-deck">
+                <div class="card">
+                    <img class="img-fluid card-img-top" src="assets/images/slider/img-slide-2.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="img-fluid card-img-top" src="assets/images/slider/img-slide-1.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="img-fluid card-img-top" src="assets/images/slider/img-slide-4.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
                     </div>
                 </div>
             </div>

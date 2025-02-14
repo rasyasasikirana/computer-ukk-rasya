@@ -4977,7 +4977,7 @@ input[type="button"].btn-block {
     background-color: #fff;
     background-clip: border-box;
     border: 0px solid rgba(0, 0, 0, 0.125);
-    border-radius: 0.25rem;
+    border-radius: 12px;
 }
 
 .card > hr {
@@ -5077,8 +5077,8 @@ input[type="button"].btn-block {
 
 .card-img,
 .card-img-top {
-    border-top-left-radius: calc(0.25rem - 0px);
-    border-top-right-radius: calc(0.25rem - 0px);
+    border-top-left-radius: calc(12px - 0px);
+    border-top-right-radius: calc(12px - 0px);
 }
 
 .card-img,
