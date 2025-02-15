@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+@extends('admin.layouts.appMember')
 @section('content')
     <div class="page-header">
         <div class="page-block">
