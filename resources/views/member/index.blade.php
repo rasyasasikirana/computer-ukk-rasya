@@ -5,7 +5,7 @@
             <div class="row align-items-center">
                 <div class="col-md-12">
                     <div class="page-header-title">
-                        <h5 style="font-size: 24px;font-weight: bold;margin-bottom: auto;">Data Barang</h5>
+                        <h5 style="font-size: 24px;font-weight: bold;margin-bottom: auto;">Hai, Selamat Berbelanja!</h5>
                     </div>
                 </div>
             </div>
@@ -16,36 +16,20 @@
     <div class="row">
         <div class="col-xl-12">
             <div class="card-deck">
-                <div class="card">
-                    <img class="img-fluid card-img-top" src="assets/images/slider/img-slide-2.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                @foreach ($products as $product)
+                    <div class="card" style="width: 18rem;">
+                        <img class="img-fluid card-img-top" src="{{ asset($product->foto ?: 'image/nophoto.jpg') }}" alt="{{ $product->nama_barang }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $product->nama_barang }}</h5>
+                            <p style="margin-bottom: 8px;"><strong>Detail:</strong> {{ $product->detail_barang }}</p>
+                            <p style="margin-bottom: 8px;"><strong>Kategori:</strong> {{ $product->category->name }}</p>
+                            <p style="margin-bottom: 8px;"><strong>Stok:</strong> {{ $product->stok }}</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted" style="color: #009d1c !important; font-weight: bold !important; font-weight: bold; font-size: 14px"><strong>Harga:</strong> Rp {{ number_format($product->harga, 0, ',', '.') }}</small>
+                        </div>
                     </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="img-fluid card-img-top" src="assets/images/slider/img-slide-1.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="img-fluid card-img-top" src="assets/images/slider/img-slide-4.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

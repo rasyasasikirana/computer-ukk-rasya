@@ -715,7 +715,7 @@ hr {
 
 small,
 .small {
-    font-size: 80%;
+    font-size: 86%;
     font-weight: 400;
 }
 
@@ -10698,7 +10698,8 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .text-muted {
-    color: #868e96 !important;
+    color: #8a958c !important;
+    font-weight: bold;
 }
 
 .text-black-50 {
@@ -20777,7 +20778,7 @@ pre[class*=language-]:before {
 }
 
 .pcoded-navbar .main-menu-header .img-radius {
-    width: 60px;
+    width: 90px;
     transition: all 0.3s ease-in-out;
 }
 
