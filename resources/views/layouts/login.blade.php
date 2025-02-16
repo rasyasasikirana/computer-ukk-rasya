@@ -33,10 +33,6 @@
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
 						</div>
-						<div class="custom-control custom-checkbox text-left mb-4 mt-2">
-							<input type="checkbox" class="custom-control-input" id="customCheck1">
-							<label class="custom-control-label" for="customCheck1">Ingat saya</label>
-						</div>
 						<button type="submit" class="btn btn-block btn-primary mb-4">Login</button>
                         </form>
 						<p class="mb-0 text-muted">Tidak mempunyai akun? <a href="{{ route('register') }}" class="f-w-400">Registrasi</a></p>
