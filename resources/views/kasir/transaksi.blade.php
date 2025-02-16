@@ -20,7 +20,7 @@
                     <h5>Daftar Transaksi</h5>
                     <div class="card-header-right">
                         <div class="btn-group card-option">
-                            <a href="{{ route('transaction.store') }}"
+                            <a href="{{ route('kasir.create') }}"
                                 style="background-color: #FF2171; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
                                 Tambah Transaksi
                             </a>
@@ -33,14 +33,12 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    {{-- <th>ID Transaksi</th> --}}
+                                    <th>ID Transaksi</th>
                                     <th>Nama Member</th>
                                     <th>Nama Barang</th>
                                     <th>Jumlah</th>
                                     <th>Total Harga</th>
                                     <th>Tanggal Transaksi</th>
-                                    <th>Waktu</th>
-                                    <th class="text-right">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -51,10 +49,9 @@
                                         <td>{{ $transaction->user->name }}</td>
                                         <td>{{ $transaction->product->nama_barang }}</td>
                                         <td>{{ $transaction->qty }}</td>
-                                        <td>Rp {{ number_format($transaction->total, 0, ',', '.') }}</td>
+                                        <td>Rp{{ number_format($transaction->total, 0, ',', '.') }}</td>
                                         <td>{{ \Carbon\Carbon::parse($transaction->tgl_transaksi)->format('d M Y') }}</td>
-                                        <td>{{ $transaction->created_at->format('H:i') }}</td>
-                                        <td class="d-flex justify-content-end">
+                                        {{-- <td class="d-flex justify-content-end">
                                             <div class="pr-2">
                                                 <a href="{{ route('transaction.edit',['transaction'=>$transaction->id]) }}" style="background-color: #007bff; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
                                                     Edit
@@ -67,7 +64,7 @@
                                                     Hapus
                                                 </button>
                                             </form>
-                                        </td>
+                                        </td> --}}
                                     </tr>
                                 @empty
                                     <tr>

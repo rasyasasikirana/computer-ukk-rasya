@@ -26,25 +26,38 @@ class KasirController extends Controller
     {
         $users = User::all();
         $products = Product::all();
-        return view('kasir.tambah', compact('users', 'products'));
+        return view('kasir.create', compact('users', 'products'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        $request->validate([
-            'user_id' => 'required|exists:users,id',
-            'product_id' => 'required|exists:products,id',
-            'qty' => 'required|integer|min:1',
-            'tgl_transaksi' => 'required|date',
-            'total' => 'required|integer|min:0',
-        ]);
+{
+    $request->validate([
+        'user_id' => 'required|exists:users,id',
+        'product_id' => 'required|exists:products,id',
+        'qty' => 'required|integer|min:1',
+        'tgl_transaksi' => 'required|date',
+    ]);
 
-        Kasir::create($request->all());
-        return redirect()->route('kasir.index')->with('success', 'Transaksi berhasil ditambahkan.');
-    }
+    $product = Product::findOrFail($request->product_id);
+    $totalHarga = $product->harga * $request->qty; // Hitung total harga otomatis
+
+    // Simpan transaksi
+    Kasir::create([
+        'user_id' => $request->user_id,
+        'product_id' => $request->product_id,
+        'qty' => $request->qty,
+        'total' => $totalHarga,
+        'tgl_transaksi' => $request->tgl_transaksi,
+    ]);
+
+    $product->stok -= $request->qty;
+    $product->save();
+
+    return redirect()->route('kasir.index')->with('success', 'Transaksi berhasil ditambahkan!');
+}
 
     /**
      * Show the form for editing the specified resource.

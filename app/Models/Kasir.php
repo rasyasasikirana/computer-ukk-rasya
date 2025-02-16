@@ -13,6 +13,14 @@ class Kasir extends Model
 
     protected $dates = ['tgl_transaksi'];
 
+    protected static function boot()
+{
+    parent::boot();
+    static::creating(function ($transaction) {
+        $transaction->id = mt_rand(100000, 999999); // ID acak 6 digit
+    });
+}
+
     public function user()
     {
         return $this->belongsTo(User::class);

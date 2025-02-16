@@ -16,6 +16,11 @@ Route::resource('product', ProductController::class);
 //   return view('member.index');
 // });
 Route::get('kasir', [KasirController::class, 'index'])->name('kasir.index');
+Route::get('/kasir/create', [KasirController::class, 'create'])->name('kasir.create');
+Route::post('/kasir/store', [KasirController::class, 'store'])->name('kasir.store');
+
+
+
 
 Route::get('member', [MemberController::class, 'index'])->name('member.index');
 

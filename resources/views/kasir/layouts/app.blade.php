@@ -21,44 +21,61 @@
 
     <!-- vendor css -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-    
-    
+
+    <!-- search -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet">
+
+
+
 
 </head>
-<body class="">
-	<!-- [ Pre-loader ] start -->
-	<div class="loader-bg">
-		<div class="loader-track">
-			<div class="loader-fill"></div>
-		</div>
-	</div>
-	<!-- [ Pre-loader ] End -->
-	<!-- [ navigation menu ] start -->
-	<nav class="pcoded-navbar menu-light ">
-		@include('kasir.layouts.sidebar')
-	</nav>
-	<!-- [ navigation menu ] end -->
-	<!-- [ Header ] start -->
-	<header class="navbar pcoded-header navbar-expand-lg navbar-light header-blue">
-		
-			
-        @include('kasir.layouts.navbar')
-				
-			
-	</header>
-	<!-- [ Header ] end -->
-	
-	
 
-<!-- [ Main Content ] start -->
-<div class="pcoded-main-container">
-    <div class="pcoded-content">
-        <!-- [ breadcrumb ] start -->
-     @yield('content')
-        <!-- [ Main Content ] end -->
+<body class="">
+    <!-- [ Pre-loader ] start -->
+    <div class="loader-bg">
+        <div class="loader-track">
+            <div class="loader-fill"></div>
+        </div>
     </div>
-</div>
-<!-- [ Main Content ] end -->
+
+    <!-- searchhh -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#user_id').select2({
+                placeholder: "-- Pilih Member --",
+                allowClear: true
+            });
+        });
+    </script>
+
+    <!-- [ Pre-loader ] End -->
+    <!-- [ navigation menu ] start -->
+    <nav class="pcoded-navbar menu-light ">
+        @include('kasir.layouts.sidebar')
+    </nav>
+    <!-- [ navigation menu ] end -->
+    <!-- [ Header ] start -->
+    <header class="navbar pcoded-header navbar-expand-lg navbar-light header-blue">
+
+
+        @include('kasir.layouts.navbar')
+
+
+    </header>
+    <!-- [ Header ] end -->
+
+
+
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+        <div class="pcoded-content">
+            <!-- [ breadcrumb ] start -->
+            @yield('content')
+            <!-- [ Main Content ] end -->
+        </div>
+    </div>
+    <!-- [ Main Content ] end -->
     <!-- Warning Section start -->
     <!-- Older IE warning message -->
     <!--[if lt IE 11]>
@@ -112,12 +129,12 @@
     <script src="assets/js/ripple.js"></script>
     <script src="assets/js/pcoded.min.js"></script>
 
-<!-- Apex Chart -->
-<script src="assets/js/plugins/apexcharts.min.js"></script>
+    <!-- Apex Chart -->
+    <script src="assets/js/plugins/apexcharts.min.js"></script>
 
 
-<!-- custom-chart js -->
-<script src="assets/js/pages/dashboard-main.js"></script>
+    <!-- custom-chart js -->
+    <script src="assets/js/pages/dashboard-main.js"></script>
 </body>
 
 </html>
