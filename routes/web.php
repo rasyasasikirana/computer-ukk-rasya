@@ -9,12 +9,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('categories', CategoryController::class);
 Route::resource('product', ProductController::class);
-Route::resource('kasir', KasirController::class)->only(['index', 'create', 'store', 'destroy']);
+// Route::resource('kasir', KasirController::class)->only(['index', 'create', 'store', 'destroy']);
 
 
 // Route::get('/member', function () {
 //   return view('member.index');
 // });
+Route::get('kasir', [KasirController::class, 'index'])->name('kasir.index');
+
 Route::get('member', [MemberController::class, 'index'])->name('member.index');
 
 Route::get('/', function () {

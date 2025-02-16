@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+@extends('kasir.layouts.app')
 @section('content')
     <div class="page-header">
         <div class="page-block">
@@ -20,7 +20,7 @@
                     <h5>Daftar Transaksi</h5>
                     <div class="card-header-right">
                         <div class="btn-group card-option">
-                            <a href="{{ route('transaction.create') }}"
+                            <a href="{{ route('transaction.store') }}"
                                 style="background-color: #FF2171; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
                                 Tambah Transaksi
                             </a>
@@ -33,8 +33,8 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>ID Transaksi</th>
-                                    <th>Nama Kasir</th>
+                                    {{-- <th>ID Transaksi</th> --}}
+                                    <th>Nama Member</th>
                                     <th>Nama Barang</th>
                                     <th>Jumlah</th>
                                     <th>Total Harga</th>
