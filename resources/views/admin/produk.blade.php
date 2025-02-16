@@ -49,7 +49,7 @@
                                             <h6>{{ $loop->iteration }}</h6>
                                         </td>
                                         <td>{{ $product->nama_barang }}</td>
-                                        <td>{{ $product->detail_barang }}</td>
+                                        <td>{{ Str::limit($product->detail_barang, 40, '...') }}</td>
                                         <td>{{ $product->category->name }}</td>
                                         <td>{{ $product->harga }}</td>
                                         <td>

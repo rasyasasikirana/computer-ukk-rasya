@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('kasirs', function (Blueprint $table) {
             $table->id(); 
-            $table->foreignId('member_id')->constrained('members')->onDelete('cascade'); 
-            $table->foreignId('barang_id')->constrained('products')->onDelete('cascade'); 
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade'); 
+            $table->foreignId('product_id')->constrained('products')->onDelete('cascade'); 
             $table->integer('qty'); 
+            $table->date('tgl_transaksi');
             $table->integer('total'); 
             $table->timestamps(); 
         });

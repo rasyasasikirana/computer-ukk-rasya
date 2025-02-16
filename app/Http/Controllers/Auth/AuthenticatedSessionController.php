@@ -33,7 +33,7 @@ class AuthenticatedSessionController extends Controller
                 case "member":
                     return redirect()->intended('member')->with('success','Berhasil login!');
                 case "kasir":
-                    return redirect()->intended('kasir/dashboard')->with('success','Berhasil login!');
+                    return redirect()->intended('kasir')->with('success','Berhasil login!');
                 case "admin":
                     return redirect()->intended('categories')->with('success','Berhasil login!');
                 case "pimpinan":
