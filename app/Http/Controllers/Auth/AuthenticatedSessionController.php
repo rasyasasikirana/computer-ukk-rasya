@@ -37,7 +37,7 @@ class AuthenticatedSessionController extends Controller
                 case "admin":
                     return redirect()->intended('categories')->with('success','Berhasil login!');
                 case "pimpinan":
-                    return redirect()->intended('pimpinan/dashboard')->with('success','Berhasil login!');
+                    return redirect()->intended('pimpinan')->with('success','Berhasil login!');
                     default:
                 redirect()->back()->withErrors("Ada yang salah");
             }

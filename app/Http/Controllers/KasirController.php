@@ -15,6 +15,7 @@ class KasirController extends Controller
      */
     public function index()
     {
+        $transactions = Kasir::orderBy('tgl_transaksi', 'asc')->get();
         $transactions = Kasir::with(['user', 'product'])->get();
         return view('kasir.transaksi', compact('transactions'));
     }
@@ -34,6 +35,7 @@ class KasirController extends Controller
      */
     public function store(Request $request)
 {
+    
     $request->validate([
         'user_id' => 'required|exists:users,id',
         'product_id' => 'required|exists:products,id',

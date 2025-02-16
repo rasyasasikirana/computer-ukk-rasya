@@ -3,8 +3,11 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\KasirController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\PDFController;
+use App\Http\Controllers\PimpinanController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use Database\Seeders\PimpinanSeeder;
 use Illuminate\Support\Facades\Route;
 
 Route::resource('categories', CategoryController::class);
@@ -19,10 +22,10 @@ Route::get('kasir', [KasirController::class, 'index'])->name('kasir.index');
 Route::get('/kasir/create', [KasirController::class, 'create'])->name('kasir.create');
 Route::post('/kasir/store', [KasirController::class, 'store'])->name('kasir.store');
 
-
-
-
 Route::get('member', [MemberController::class, 'index'])->name('member.index');
+
+Route::get('pimpinan', [PimpinanController::class, 'index'])->name('pimpinan.index');
+Route::get('cetak-pdf', [PDFController::class, 'generatePDF'])->name('PDF.generatePDF');
 
 Route::get('/', function () {
     return view('layouts.login');
