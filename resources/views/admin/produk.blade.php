@@ -64,7 +64,7 @@
                                         <td>{{ $product->stok }}</td>
                                         <td class="d-flex justify-content-end">
                                             <div class="pr-2">
-                                                <a href="{{ route('product.edit',['product'=>$product->id]) }}" style="background-color: #007bff; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
+                                                <a href="{{ route('product.edit',['product'=> $product->id]) }}" style="background-color: #007bff; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
                                                     Edit
                                                 </a>
                                             </div>

@@ -41,7 +41,7 @@
 
                     <div class="form-group">
                         <label for="harga">Harga</label>
-                        <input type="text" class="form-control" id="harga" name="harga" required>
+                        <input type="number" class="form-control" id="harga" name="harga" min="0" required>
                     </div>
                     <div class="form-group">
                         <label for="foto">Foto</label>
@@ -49,7 +49,7 @@
                     </div>
                     <div class="form-group">
                         <label for="stok">Stok</label>
-                        <input type="text" class="form-control" id="stok" name="stok" required>
+                        <input type="number" class="form-control" id="stok" name="stok" min="0" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Simpan</button>
                 </form>

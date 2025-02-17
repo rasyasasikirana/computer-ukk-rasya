@@ -75,7 +75,7 @@ class ProductController extends Controller
     public function edit( $id)
     {
         // $products = Product::all();
-        $product = Product::where('id', $id)->firstOrFail(); // ✅ BENAR
+        $product = Product::where('id', $id)->firstOrFail();
 
         $categories = Category::all();
         return view('admin.update', compact('product', 'categories'));

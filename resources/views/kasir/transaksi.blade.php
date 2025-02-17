@@ -57,32 +57,21 @@
                                         <td>{{ $transaction->qty }}</td>
                                         <td>Rp{{ number_format($transaction->total, 0, ',', '.') }}</td>
                                         <td>{{ \Carbon\Carbon::parse($transaction->tgl_transaksi)->format('d M Y') }}</td>
-                                        {{-- <td class="d-flex justify-content-end">
-                                            <div class="pr-2">
-                                                <a href="{{ route('transaction.edit',['transaction'=>$transaction->id]) }}"
-                                                    style="background-color: #007bff; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
-                                                    Edit
-                                                </a>
-                                            </div>
-                                            <form
-                                                action="{{ route('transaction.destroy', ['transaction' => $transaction->id]) }}"
-                                                method="POST">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit"
-                                                    style="background-color: #fb0000; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
-                                                    Hapus
-                                                </button>
-                                            </form>
-                                        </td> --}}
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="9" class="text-center">Tidak ada data transaksi</td>
+                                        <td colspan="7" class="text-center">Tidak ada data transaksi</td>
                                     </tr>
                                 @endforelse
                             </tbody>
                         </table>
+                    </div>
+                    
+                    <!-- Total Pendapatan -->
+                    <div class="card-footer text-right">
+                        <h8 style="font-weight: bold; color: #FF2171;">
+                            Total Pendapatan: Rp{{ number_format($transactions->sum('total'), 0, ',', '.') }}
+                        </h8>                        
                     </div>
                 </div>
             </div>

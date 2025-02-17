@@ -49,5 +49,8 @@
             @endforeach
         </tbody>
     </table>
+    <p class="total">
+        Total Pendapatan: Rp{{ number_format($transactions->sum('total'), 0, ',', '.') }}
+    </p>
 </body>
 </html>

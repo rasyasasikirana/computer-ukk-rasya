@@ -74,6 +74,13 @@
                             </tbody>
                         </table>
                     </div>
+
+                    <!-- Total Pendapatan -->
+                    <div class="card-footer text-right">
+                        <h8 style="font-weight: bold; color: #FF2171;">
+                            Total Pendapatan: Rp{{ number_format($transactions->sum('total'), 0, ',', '.') }}
+                        </h8>                        
+                    </div>
                 </div>
             </div>
         </div>

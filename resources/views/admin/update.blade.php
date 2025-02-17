@@ -42,7 +42,7 @@
 
                 <div class="form-group">
                     <label for="harga">Harga</label>
-                    <input value="{{ $product->harga }}" class="form-control" id="harga" name="harga" required>
+                    <input type="number" value="{{ $product->harga }}" class="form-control" id="harga" name="harga" min="0" required>
                 </div>
                 <div class="form-group">
                     <label for="foto">Foto</label>
@@ -57,7 +57,7 @@
 
                 <div class="form-group">
                     <label for="stok">Stok</label>
-                    <input value="{{ $product->stok }}" class="form-control" id="stok" name="stok" required>
+                    <input type="number" value="{{ $product->stok }}" class="form-control" id="stok" name="stok" min="0" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Ubah</button>
             </form>
