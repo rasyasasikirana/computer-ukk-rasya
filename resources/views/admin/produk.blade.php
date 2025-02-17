@@ -68,13 +68,15 @@
                                                     Edit
                                                 </a>
                                             </div>
-                                            <form class="mt-n1"
-                                                action="{{ route('product.destroy', ['product' => $product->id]) }}"
-                                                method="POST" style="margin-top: 10px;">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit"
-                                                    style="background-color: #fb0000; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Hapus</button>
+                                            <form class="mt-n1 delete-form"
+                                            action="{{ route('product.destroy', ['product' => $product->id]) }}"
+                                            method="POST" style="margin-top: 10px;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="button" onclick="confirmDelete(this)" data-id="{{ $product->id }}" class="delete-btn"
+                                                style="background-color: #fb0000; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
+                                                Hapus
+                                            </button>
                                             </form>
                                         </td>
                                     </tr>
@@ -89,4 +91,26 @@
             </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <script>
+            function confirmDelete(button) {
+                Swal.fire({
+                    title: "Apakah Anda yakin?",
+                    text: "Data yang dihapus tidak bisa dikembalikan!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#d33",
+                    cancelButtonColor: "#3085d6",
+                    confirmButtonText: "Ya, Hapus!",
+                    cancelButtonText: "Batal"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Ambil form terdekat dan submit
+                        button.closest("form").submit();
+                    }
+                });
+            }
+        </script>
 @endsection

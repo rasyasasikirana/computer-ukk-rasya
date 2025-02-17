@@ -14,6 +14,7 @@
     <!-- [ breadcrumb ] end -->
     <!-- [ Main Content ] start -->
     <div class="row">
+
         <div class="col-xl-12 col-md-12">
             <div class="card table-card">
                 <div class="card-header">
@@ -28,6 +29,11 @@
                     </div>
                 </div>
                 <div class="card-body p-0">
+                    @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
                     <div class="table-responsive">
                         <table class="table table-hover mb-0">
                             <thead>
@@ -53,14 +59,18 @@
                                         <td>{{ \Carbon\Carbon::parse($transaction->tgl_transaksi)->format('d M Y') }}</td>
                                         {{-- <td class="d-flex justify-content-end">
                                             <div class="pr-2">
-                                                <a href="{{ route('transaction.edit',['transaction'=>$transaction->id]) }}" style="background-color: #007bff; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
+                                                <a href="{{ route('transaction.edit',['transaction'=>$transaction->id]) }}"
+                                                    style="background-color: #007bff; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
                                                     Edit
                                                 </a>
                                             </div>
-                                            <form action="{{ route('transaction.destroy', ['transaction' => $transaction->id]) }}" method="POST">
+                                            <form
+                                                action="{{ route('transaction.destroy', ['transaction' => $transaction->id]) }}"
+                                                method="POST">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" style="background-color: #fb0000; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
+                                                <button type="submit"
+                                                    style="background-color: #fb0000; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
                                                     Hapus
                                                 </button>
                                             </form>
